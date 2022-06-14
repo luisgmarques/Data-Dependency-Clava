@@ -4,8 +4,8 @@ laraImport("lara.Io")
 laraImport("clava.Clava")
 
 //var srcFolder = Io.getPath("C:\\Users\\Luis\\Desktop\\PI\\src");
-var srcFolder = Io.getPath("/home/luis/Desktop/FEUP/PI/src");
-var srcFile = Io.getPath(srcFolder, "function.c");
+var srcFolder = Io.getPath("/home/luis/Desktop/FEUP/Data-Dependency-Clava/src");
+var srcFile = Io.getPath(srcFolder, "matmul.c");
 
 //println(Io.readFile(srcFile));
 
@@ -56,8 +56,10 @@ for(let scope of scopes) {
 			}
 		}
 	}
-	
-	scopes_results[scope.parent.name].push(results)
+
+	if(scope.parent.name !== undefined) {
+		scopes_results[scope.parent.name].push(results)
+	}
 
 }
 
