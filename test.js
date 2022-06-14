@@ -75,7 +75,7 @@ for (let [scope, variables] of Object.entries(scopes_results)) {
 			
 			print('\t'.repeat(t))
 			
-			print('Key: ')
+			print('Var: ')
 			println(key)
 			print_results(value, t)
 		}
