@@ -2,9 +2,14 @@ laraImport("weaver.Query")
 laraImport("lara.clava.code.UsesResult")
 laraImport("lara.Io")
 laraImport("clava.Clava")
+laraImport("lara.Platforms")
 
-//var srcFolder = Io.getPath("C:\\Users\\Luis\\Desktop\\PI\\src");
-var srcFolder = Io.getPath("/home/luis/Desktop/FEUP/Data-Dependency-Clava/src");
+
+if(Platforms.isWindows())
+	var srcFolder = Io.getPath("..\\Data-Dependency-Clava\\src");
+else
+	var srcFolder = Io.getPath("../Data-Dependency-Clava/src")
+
 var srcFile = Io.getPath(srcFolder, "matmul.c");
 
 //println(Io.readFile(srcFile));
